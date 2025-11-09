@@ -9,10 +9,10 @@ import time_uuid, uuid
 # pip install kafka-python
 # pip install time-uuid
 
-KAFKA_TOPIC_NAME_CONS = "counts"   #topic
+KAFKA_TOPIC_NAME_CONS = "cctv_vehicle_counts"   #topic
 KAFKA_BOOTSTRAP_SERVERS_CONS = '127.0.0.1:9092'
 
-if __name__ == "__main_":
+if __name__ == "__main__":
     print("Kafka Producer Application Started ... ")
     kafka_producer_obj = KafkaProducer(bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS_CONS,
                                        value_serializer=lambda x: dumps(x).encode('utf-8'))
