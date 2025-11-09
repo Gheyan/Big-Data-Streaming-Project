@@ -12,7 +12,7 @@ import time_uuid, uuid
 KAFKA_TOPIC_NAME_CONS = "counts"   #topic
 KAFKA_BOOTSTRAP_SERVERS_CONS = '127.0.0.1:9092'
 
-if __name__ == "__ma _":
+if __name__ == "__main_":
     print("Kafka Producer Application Started ... ")
     kafka_producer_obj = KafkaProducer(bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS_CONS,
                                        value_serializer=lambda x: dumps(x).encode('utf-8'))
@@ -42,7 +42,7 @@ if __name__ == "__ma _":
         #send data
         message["timeuuid_id"] = str(time_uuid.utctime())
         message["lgu_code"] = '1200'
-        message["sensor_id"] = 'sensor_01'
+        message["sensor_id"] = 'sensor_03'
         message["date_saved"] = str(date_today.strftime('%m/%d/%Y'))
         message["time_saved"] = str(date_today.strftime("%X"))
         message["total"] = total
